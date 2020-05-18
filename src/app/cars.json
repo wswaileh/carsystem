@@ -1,0 +1,14 @@
+[
+    {
+    "customer_id": "1",
+    "customerName": "Mustafa",
+    "customerPhone": "345345456665",
+    "customerAssuranceType": "private"
+    },
+    {
+        "customer_id": "2",
+        "customerName": "Waleed",
+        "customerPhone": "135315135",
+        "customerAssuranceType": "private"
+        }
+    ]

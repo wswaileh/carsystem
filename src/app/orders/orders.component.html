@@ -1,0 +1,38 @@
+<mat-spinner *ngIf="!doneLoading" id="spinner"></mat-spinner>
+
+<table class="table" *ngIf="doneLoading">
+    <thead>
+        <tr>
+            <th scope="col">Booking ID</th>
+            <th scope="col">Car</th>
+            <th scope="col">Customer</th>
+            <th scope="col">From Date</th>
+            <th scope="col">To Date</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let booking of bookings">
+            <th scope="row">{{booking.bookingId}}</th>
+            <td>{{booking.carName}}</td>
+            <td>{{booking.customerName}}</td>
+            <td>{{booking.fromDate}}</td>
+            <td>{{booking.toDate}}</td>
+            <td><button pButton type="button" label="Save" style="margin-right: .25em; background-color: #34A835;"
+                    [routerLink]="['/editbooking/',booking.bookingId]">
+                    <i class="pi pi-pencil" style="color: white;"></i>
+                </button>
+
+                <button pButton type="button" label="Cancel" class="ui-button-secondary"
+                    style="background-color: #e91224;" (click)="deleteBooking(booking.bookingId)">
+                    <i class="pi pi-times" style="color: white;"></i>
+                </button></td>
+        </tr>
+
+    </tbody>
+</table>
+
+<a [routerLink]="['/addbooking']"  class="float">
+    <i class="pi pi-plus"></i>
+</a>
+  

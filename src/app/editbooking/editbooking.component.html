@@ -1,0 +1,29 @@
+<mat-spinner *ngIf="!doneLoading" id="spinner"></mat-spinner>
+
+<form *ngIf="doneLoading" #editCarForm="ngForm" class="border border-light p-5" method="post"
+    (ngSubmit)="onSubmit(editCarForm)" autocomplete="off">
+
+    <p class="h4 mb-4 text-center">Edit Booking</p>
+
+    <label for="bookingId">Booking ID</label>
+    <input type="text" [(ngModel)]="bookingId" type="number" name="bookingId" class="form-control mb-4"
+        placeholder="Booking ID">
+
+    <label for="customerId">Customer ID</label>
+    <input type="text" [(ngModel)]="customerId" type="text" name="customerId" class="form-control mb-4"
+        placeholder="Customer ID">
+
+    <label for="carId">Car ID</label>
+    <input type="text" [(ngModel)]="carId" type="text" name="carId" class="form-control mb-4"
+        placeholder="Car ID">
+
+    <label for="fromdate">From Date</label>
+    <input type="text" [(ngModel)]="fromdate" type="text" name="fromdate" class="form-control mb-4"
+        placeholder="From date">
+
+    <label for="todate">From Date</label>
+    <input type="text" [(ngModel)]="todate" type="text" name="todate" class="form-control mb-4"
+        placeholder="To Date">
+
+    <button class="btn btn-info btn-block" type="submit">Edit Booking</button>
+</form>

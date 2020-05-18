@@ -1,0 +1,20 @@
+<mat-spinner *ngIf="!doneLoading" id="spinner"></mat-spinner>
+
+<form *ngIf="doneLoading" #editCarForm="ngForm" class="border border-light p-5" method="post" (ngSubmit)="onSubmit(editCarForm)" autocomplete="off">
+
+    <p class="h4 mb-4 text-center">Edit Car</p>
+
+    <label for="carModel">Car ID</label>
+    <input type="text" [(ngModel)]="carId" name="carId" class="form-control mb-4" placeholder="Car ID">
+
+    <label for="carName">Car Name</label>
+    <input type="text" [(ngModel)]="carName" name="carName" class="form-control mb-4" placeholder="Car name">
+
+    <label for="carModel">Car model</label>
+    <input type="text" [(ngModel)]="carModel" name="carModel" class="form-control mb-4" placeholder="Car model">
+
+    <label for="carPrice">Car Price</label>
+    <input type="text" [(ngModel)]="carPrice"  name="carPrice" class="form-control mb-4" placeholder="Car price">
+
+    <button class="btn btn-info btn-block" type="submit">Edit car</button>
+</form>

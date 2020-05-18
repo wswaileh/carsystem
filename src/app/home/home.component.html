@@ -1,0 +1,29 @@
+<mat-spinner *ngIf="!doneLoading" id="spinner"></mat-spinner>
+
+<span *ngIf="doneLoading">
+    <div class="ui-g" *ngFor="let subArr of chuck">
+        <div *ngFor="let car of subArr; let i = index" class="ui-g-12  ui-lg-4" [ngClass]="{'ui-md-6': i != 2}">
+            <p-card header="{{car.carName}}" subheader="{{car.carModel}}" styleClass="ui-card-shadow">
+                <p-header>
+                    <img src="Card" src="../../assets/car.png">
+                </p-header>
+                <div>{{car.carPrice}}/day</div>
+                <p-footer>
+                    <button pButton type="button" label="Save" style="margin-right: .25em; background-color: #34A835;"
+                        [routerLink]="['/editcar/',car.carId]"
+                    >
+                        <i class="pi pi-pencil" style="color: white;"></i>
+                    </button>
+
+                    <button pButton type="button" label="Cancel" class="ui-button-secondary"
+                        (click)="deleteCar(car.carId)" style="background-color: #e91224;">
+                        <i class="pi pi-times" style="color: white;"></i>
+                    </button>
+                </p-footer>
+            </p-card>
+        </div>
+    </div>
+</span>
+<a [routerLink]="['/addcar']"  class="float">
+    <i class="pi pi-plus"></i>
+</a>

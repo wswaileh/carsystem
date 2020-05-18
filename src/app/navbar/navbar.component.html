@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">Steve Auto</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div [collapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" routerLink="/cars" (click)="isNavbarCollapsed=true">Cars</a>
+            <a class="nav-item nav-link" routerLink="/customers" (click)="isNavbarCollapsed=true">Customers</a>
+            <a class="nav-item nav-link" routerLink="/bookings" (click)="isNavbarCollapsed=true">Bookings</a>
+        </div>
+    </div>
+  </nav>
